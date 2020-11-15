@@ -1,0 +1,10 @@
+<header class=header>
+
+</header>
+
+<h3>Confirm</h3>
+<%=form_with(model: @blog, url: blogs_path, local: true) do |form| %>
+  <%=form.hidden_field:tweet%>
+  <p>tweet:<%= @blog.tweet %></p>
+  <%=form.submit 'Confirm' %>
+<%end%>

@@ -1,0 +1,22 @@
+<div class="view">
+  <header class=header>
+
+  </header>
+  <h1>Welcome to Tweeter</h1>
+
+  <table>
+    <tr>
+      <th>POSTS</th>
+    </tr>
+  <% @blogs.each do |blog| %>
+    <tr>
+      <td><%= blog.tweet %></td>
+      <td><%= link_to 'Check tweet', blog_path(blog.id) %></td>
+      <td><%= link_to "Edit", edit_blog_path(blog.id), data: { confirm: 'Do you really want to edit it?' } %></td>
+      <td><%= link_to 'Delete', blog_path(blog.id), method: :delete ,data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+  <% end %>
+  </table>
+  <%=link_to'Post new tweet',new_blog_path %>
+</div>
